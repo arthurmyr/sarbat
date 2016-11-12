@@ -1,0 +1,95 @@
+em, i {
+  font-style: normal;
+}
+@mixin border-gradient($thickness, $color1, $color2) {
+  border-width: $thickness;
+  border-style: solid;
+  -webkit-border-image: -webkit-linear-gradient(top left, $color1, $color2);
+  -moz-border-image: -moz-linear-gradient(top left, $color1, $color2);
+  border-image: linear-gradient(to bottom right, $color1, $color2);
+  border-image-slice: 1;
+}
+@mixin flip-text($vert, $horiz) {
+  -moz-transform: scale($vert, $horiz);
+  -webkit-transform: scale($vert, $horiz);
+  -o-transform: scale($vert, $horiz);
+  -ms-transform: scale($vert, $horiz);
+  transform: scale($vert, $horiz);
+}
+
+#section-1 {
+  #cover {
+    width: 100%;
+  }
+  #logo {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    left: 20%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-left: 10px;
+    padding-right: 8px;
+    line-height: 12px;
+    @include border-gradient(1px, #f3c400, #ff5601);
+    font-family: 'Heebo', sans-serif;
+    font-weight: 900;
+    font-size: 16px;
+    em {
+      display: block;
+      @include flip-text(-1, -1);
+      padding-left: 2px;
+    }
+  }
+  #hamburger-icon {
+    cursor: pointer;
+    border: 1px solid black;
+    position: absolute;
+    top: 27px;
+    right: 20%;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    div {
+      background-color: black;
+      width: 18px;
+      height: 3px;
+    }
+    div:nth-child(1), div:nth-child(2) {
+      margin-bottom: 3px;
+    }
+  }
+  .presentation {
+    position: absolute;
+    top: 270px;
+    left: calc(50% - (300px / 2));
+    h2 {
+      text-align: center;
+      margin: 0;
+    }
+    h2:first-child {
+      letter-spacing: 3px;
+      font-size: 57px;
+      font-family: 'Heebo', sans-serif;
+    }
+    h2:nth-child(2) {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 23px;
+    }
+    p {
+      display: inline-block;
+      position: absolute;
+      left: calc(50% - (182px / 2));
+      padding-top: 5px;
+      font-style: italic;
+      border-top: 1px solid black;
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 400;
+      font-style: italic;
+      font-size: 12px;
+    }
+  }
+}
