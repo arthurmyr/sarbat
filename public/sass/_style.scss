@@ -53,6 +53,7 @@ p, a {
 h2, h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
+  color: white
 }
 
 #section-1 {
@@ -106,6 +107,7 @@ h2, h3 {
     h2 {
       text-align: center;
       margin: 0;
+      color: #000;
     }
     h2:first-child {
       letter-spacing: 3px;
@@ -288,7 +290,7 @@ h2, h3 {
       .hr {
         width: 135px;
         height: 2px;
-        background-color: orange;
+        @include background-gradient(#f3c400, #ff5601);
         margin-bottom: 20px;
       }
       h3 {
@@ -304,5 +306,41 @@ h2, h3 {
     > div:nth-child(2), > div:nth-child(3) {
       margin-right: 2%;
     }
+  }
+}
+
+#section-4 {
+  padding-top: 55px;
+  padding-left: 20%;
+  padding-right: 20%;
+  height: 277px;
+  @include background-gradient(#f3c400, #ff5601);
+  h2 {
+    margin-bottom: 40px;
+  }
+  table {
+    tr {
+      line-height: 75px;
+    }
+    td {
+      width: 200px;
+      position: relative;
+      div {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .graphicriver {
+      width: 120px;
+      position: relative;
+      left: -8px;
+      top: 7px;
+    }
+    .audiojungle {width: 108px;}
+    .photodune {width: 105px;}
+    .activeden {width: 93px;}
+    .threedocean {width: 88px;}
+    .codecanyon {width: 115px;}
+
   }
 }
