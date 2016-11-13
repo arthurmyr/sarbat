@@ -1,14 +1,27 @@
 * { 
   margin:0; padding:0; 
 }
-em, i {
+em, i, a {
   font-style: normal;
+  text-decoration: none;
+  color: black;
+}
+.clear {
+  display: block;
+  clear: both;
+}
+@mixin background-gradient($color1, $color2) {
+  background: -webkit-linear-gradient(left, $color1, $color2);
+  background: -o-linear-gradient(left, $color1, $color2);
+  background: -moz-linear-gradient(left, $color1, $color2);
+  background: linear-gradient(to right, $color1, $color2);
 }
 @mixin border-gradient($thickness, $color1, $color2) {
   border-width: $thickness;
   border-style: solid;
   -webkit-border-image: -webkit-linear-gradient(top left, $color1, $color2);
   -moz-border-image: -moz-linear-gradient(top left, $color1, $color2);
+  -o-border-image: -o-linear-gradient(bottom right, $color1, $color2);
   border-image: linear-gradient(to bottom right, $color1, $color2);
   border-image-slice: 1;
 }
@@ -18,6 +31,28 @@ em, i {
   -o-transform: scale($vert, $horiz);
   -ms-transform: scale($vert, $horiz);
   transform: scale($vert, $horiz);
+}
+@mixin hr($length, $thickness, $color) {
+  width: $length;
+  height: $thickness;
+  background-color: $color;
+}
+@mixin vr($length, $thickness, $color) {
+  height: $length;
+  width: $thickness;
+  background-color: $color;
+}
+@mixin absolute-center($width) {
+  $half: ($width / 2);
+  left: (50% - $half);
+}
+
+p, a {
+    font-family: 'Noto Sans', sans-serif;
+}
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 #section-1 {
@@ -113,8 +148,6 @@ em, i {
   padding-top: 65px;
   padding-bottom: 25px;
   h2, h3 {
-    font-family: 'Montserrat';
-    font-weight: 400;
     color: white;
   }
   h2 {
@@ -130,7 +163,7 @@ em, i {
     }
     p {
       color: #6c6c6c;
-      font-size: 9px;
+      font-size: 10px;
       line-height: 17px;
     }
     div {
@@ -150,6 +183,125 @@ em, i {
       }
     }
     div:first-child, div:nth-child(2) {
+      margin-right: 2%;
+    }
+  }
+}
+
+#section-3 {
+  position: relative;
+  height: 1035px;
+  background-color: #121212;
+  * {
+    color: white;
+  }
+  a {
+    font-size: 10px;
+  }
+  div:first-child {
+    .column:nth-child(-n + 4) {
+      margin-right: 2px;
+    }
+    .column {
+      width: 19.87%;
+      display: inline-block;
+      float: left;
+      div {
+        background-color: #fff;
+        margin-bottom: 2px;
+      }
+      div:nth-child(2) {
+        height: 250px;
+      }
+    }
+    .column:nth-child(1), .column:nth-child(5) {
+      div:first-child {
+        height: 250px;
+      }
+    }
+    .column:nth-child(2), .column:nth-child(4) {
+      div:first-child {
+        height: 209px;
+      }
+    }
+    .column:nth-child(3) div:first-child {
+        height: 172px;
+    }
+    .column:nth-child(2) {
+      div:nth-child(2) {
+        height: 176px;
+      }
+      div:nth-child(3) {
+        height: 60px;
+        text-align: center;
+        padding-top: 15px;
+        @include background-gradient(#f3c400, #ff5601);
+        p {
+          margin-bottom: 10px;
+          font-family: 'Montserrat', sans-serif;
+        }
+        .hr {
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 5px;
+          @include hr(111px, 1px, white);
+        }
+      }
+    }
+  }
+  > a {
+    display: block;
+    width: 50%;
+    height: 30px;
+    @include background-gradient(#f3c400, #ff5601);
+    line-height: 30px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    margin-bottom: 100px;
+  }
+  #howework {
+    padding-left: 20%;
+    padding-right: 20%;
+    h2 {
+      margin-bottom: 30px;
+    }
+    > div {
+      width: 31%;
+      display: inline-block;
+      span {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 45px;
+        display: block;
+        margin-bottom: 5px;
+        em {
+          position: relative;
+          top: -20px;
+          left: -10px;
+          font-family: 'Noto Sans', sans-serif;
+          font-size: 17px;
+          font-style: italic;
+          color: #6c6c6c;
+        }
+      }
+      .hr {
+        width: 135px;
+        height: 2px;
+        background-color: orange;
+        margin-bottom: 20px;
+      }
+      h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+      p {
+      color: #6c6c6c;
+      font-size: 10px;
+      line-height: 17px;
+    }
+    }
+    > div:nth-child(2), > div:nth-child(3) {
       margin-right: 2%;
     }
   }
