@@ -357,6 +357,7 @@ h2, h3 {
   h3 {
     margin-bottom: 10px;
     font-size: 17px;
+    text-align: left;
   }
   > div {
     border: 1px solid #6c6c6c;
@@ -414,6 +415,9 @@ h2, h3 {
     }
       text-align: center;
   }
+  > div:last-child {
+    margin-right: 0;
+  }
 }
 
 #section-6 {
@@ -439,7 +443,7 @@ h2, h3 {
       display: inline-block;
       position: absolute;
       left: 0px;
-      bottom: -46px;
+      bottom: -32px;
     }
     span {
       color: white;
@@ -477,6 +481,7 @@ h2, h3 {
     > img {
       position: absolute;
       width: 10px;
+      cursor: pointer;
     }
     > img:first-child {
       top: 26px;
@@ -541,5 +546,83 @@ h2, h3 {
         font-style: italic;
       }
     }
+  }
+}
+
+#section-7 {
+  background-color: #121212;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 80px;
+  padding-bottom: 90px;
+  h2 {
+    margin-bottom: 45px;
+  }
+  > div {
+    display: inline-block;
+    width: 175px;
+    margin-bottom: 10px;
+    h3 {
+      color: white;
+      font-size: 45px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900px;
+      margin-bottom: 5px;
+      em {
+        font-size: 16px;
+        color: #6c6c6c;
+        font-style: italic;
+        font-family: 'Noto Sans', sans-serif;
+        position: relative;
+        bottom: 18px;
+        right: 8px;
+      }
+    }
+    .hr {
+      width: 70px;
+      height: 1px;
+      @include background-gradient(#f3c400, #ff5601);
+      margin-bottom: 15px;
+    }
+    p {
+      color: white;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    a {
+      font-family: 'Noto Sans', sans-serif;
+      color: #fff;
+      font-size: 9px;
+    }
+  }
+  > div:nth-child(2) {
+    margin-left: 210px;
+  }
+  > div:nth-child(3) {
+    float: right;
+  }
+}
+#social-bar {
+  width: 100%;
+  background-color: #121212;
+  border-top: #505050 1px solid;
+  border-bottom: #505050 1px solid;
+  display: flex;
+  flex-flow: row nowrap;
+  div {
+    height: 50px; 
+    flex: 1;
+    display: flex;
+    &:hover {
+      @include background-gradient(#f3c400, #ff5601);
+    }
+  }
+  div:nth-child(1), div:nth-child(2), div:nth-child(3) {
+    border-right: #505050 1px solid;
+  }
+  img {
+    height: 20px;
+    margin: auto;
   }
 }
