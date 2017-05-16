@@ -1,4 +1,4 @@
-var httpPort = 1315,
+var port = 1317,
     express = require('express'),
     server = express();
 
@@ -11,4 +11,6 @@ server.use(function(req, res) {
   res.redirect('/');
 })
 
-server.listen(httpPort);
+server.listen(port, function(){
+    console.log('listening on *'+port);
+});
